@@ -195,7 +195,7 @@ select {
 a:focus,
 button:focus,
 select:focus {
-  outline: 0;
+  outline: 2 px;
 }
 
 a.text-dark:hover {
@@ -451,6 +451,7 @@ textarea.form-control {
 
 .navbar .nav-item.active {
   font-weight: bold;
+  color: #000
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -553,8 +554,8 @@ textarea.form-control {
   border-radius: 45%;
   -webkit-transform: translateX(-50%) rotate(0);
           transform: translateX(-50%) rotate(0);
-  -webkit-animation: rotate 6s linear infinite;
-          animation: rotate 6s linear infinite;
+  -webkit-animation: rotate 15s linear infinite;
+          animation: rotate 15s linear infinite;
   z-index: 10;
 }
 
