@@ -428,7 +428,7 @@ textarea.form-control {
 
 /* /card */
 .navigation {
-  padding: 0px 50px;
+  padding: 10px 50px;
   transition: .3s ease;
 }
 
@@ -436,6 +436,21 @@ textarea.form-control {
   background-color: #29274c;
   padding: 1px 10px;
 }
+
+.skip {
+  position: absolute;
+  left: -10000px;
+  top: auto;width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip:focus {
+  position: static;
+  width: auto;
+  height: auto;
+}
+
 
 @media (max-width: 991px) {
   .navigation.nav-bg {
