@@ -93,7 +93,7 @@ h6, .h6 {
 }
 
 .btn:focus {
-  outline: 0;
+  outline: 1 px #e6bccd;
   box-shadow: none !important;
 }
 
@@ -190,6 +190,7 @@ a,
 a:hover,
 a:focus {
   text-decoration: none;
+  color : #e6bccd
 }
 
 a,
@@ -202,7 +203,8 @@ select {
 a:focus,
 button:focus,
 select:focus {
-  outline: 2 px;
+  outline: 2 px
+  color #e6bccd;
 }
 
 a.text-dark:hover {
@@ -404,7 +406,7 @@ a:hover {
 
 .form-control:focus {
   border-color: #29274c;
-  outline: 0;
+  outline: 1 px #c7c7c7;
   box-shadow: none !important;
 }
 
