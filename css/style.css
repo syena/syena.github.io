@@ -136,7 +136,7 @@ h6, .h6 {
 }
 
 .btn-transparent:active, .btn-transparent:hover {
-  color: #49274c;
+  color: #29274c;
 }
 
 body {
@@ -178,6 +178,12 @@ img {
   vertical-align: middle;
   border: 0;
   size:50%;
+}
+
+.logo_img {
+  height: 80px;
+  max-height: 80px;
+  width: auto;
 }
 
 a,
