@@ -20,14 +20,14 @@ body {
   line-height: 1.2;
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
-  font-size: 15px;
+  font-size: 18px;
   color: #012a36;
 }
 
 p, .paragraph {
   font-weight: 400;
   color: #012a36;
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.8;
   font-family: "Roboto", sans-serif;
 }
@@ -93,7 +93,7 @@ h6, .h6 {
 }
 
 .btn:focus {
-  outline: 1 px #e6bccd;
+  outline: 1 px #ffffff;
   box-shadow: none !important;
 }
 
@@ -189,8 +189,10 @@ img {
 a,
 a:hover,
 a:focus {
-  text-decoration: none;
-  color : #e6bccd
+  text-decoration: underline;
+  outline : 2px
+  color#ffffff
+  
 }
 
 a,
@@ -205,6 +207,7 @@ button:focus,
 select:focus {
   outline: 2 px
   color #e6bccd;
+  text-decoration: underline;
 }
 
 a.text-dark:hover {
@@ -220,8 +223,8 @@ a:hover {
 }
 
 .section {
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 20px;
+  padding-bottom: 60px;
 }
 
 .section-title {
@@ -483,7 +486,7 @@ textarea.form-control {
 }
 
 .hero-area {
-  padding: 300px 0 200px;
+  padding: 75px 0 75px;
   position: relative;
 }
 
