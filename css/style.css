@@ -93,8 +93,8 @@ h6, .h6 {
 }
 
 .btn:focus {
-  outline: 1 px #ffffff;
-  box-shadow: none !important;
+  outline: 5 px #000;
+  box-shadow: none;
 }
 
 .btn:active {
