@@ -31,10 +31,10 @@ if( empty($errors))
 	
 	mail($to,$email_subject,$email_body,$headers);
 	//redirect to the 'thank you' page
-	header('Location: about.html');
+	header('Location: thank-you.html');
 } 
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
 <html>
 <head>
 	<title>Contact form handler</title>
@@ -45,6 +45,7 @@ if( empty($errors))
 <?php
 echo nl2br($errors);
 ?>
+<p>Erreurs </p>
 
 
 </body>
