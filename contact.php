@@ -1,29 +1,51 @@
-<?php
-
-function strip_crlf($string)
+<?php 
+$errors = '';
+$myemail = 'yasmine_messaoudi@hotmail.com';//<-----Put Your email address here.
+if(empty($_POST['name'])  || 
+   empty($_POST['email']) || 
+   empty($_POST['message']))
 {
-    return str_replace("\r\n", "", $string);
+    $errors .= "\n Error: all fields are required";
 }
 
-if (! empty($_POST["send"])) {
-    $name = $_POST["name"];
-    $email = $_POST["email"];
-    $content = $_POST["message"];
+$name = $_POST['name']; 
+$email_address = $_POST['email']; 
+$message = $_POST['message']; 
 
-    $toEmail = "yasmine_messaoudi@hotmail.com";
-    // CRLF Injection attack protection
-    $name = strip_crlf($name);
-    $email = strip_crlf($email);
-    if (! filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo "The email address is invalid.";
-    } else {
-        // appending \r\n at the end of mailheaders for end
-        $mailHeaders = "From: " . $name . "<" . $email . ">\r\n";
-        if (mail($toEmail, $subject, $content, $mailHeaders)) {
-            $message = "Your contact information is received successfully.";
-            $type = "success";
-        }
-    }
+if (!preg_match(
+"/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/i", 
+$email_address))
+{
+    $errors .= "\n Error: Invalid email address";
 }
-require_once "contact.php";
+
+if( empty($errors))
+{
+	$to = $myemail; 
+	$email_subject = "Contact form submission: $name";
+	$email_body = "You have received a new message. ".
+	" Here are the details:\n Name: $name \n Email: $email_address \n Message \n $message"; 
+	
+	$headers = "From: $myemail\n"; 
+	$headers .= "Reply-To: $email_address";
+	
+	mail($to,$email_subject,$email_body,$headers);
+	//redirect to the 'thank you' page
+	header('Location: about.html');
+} 
 ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+<html>
+<head>
+	<title>Contact form handler</title>
+</head>
+
+<body>
+<!-- This page is displayed only if there is some error -->
+<?php
+echo nl2br($errors);
+?>
+
+
+</body>
+</html>
